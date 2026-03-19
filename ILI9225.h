@@ -136,7 +136,6 @@ class ILI9225 {
     int maxX;
     int height;
     int maxY;
-    int blitBufferSize;
 
     int orientation = 0;
     uint16_t bgColour = COLOUR_BLACK;
@@ -150,7 +149,7 @@ class ILI9225 {
     }
 
 public:
-    ILI9225(SPIClass *spi, int cs, int dc, int rst, int sdi, int clk, int width=ILI9225_LCD_WIDTH, int height=ILI9225_LCD_HEIGHT, int blit_buffer_size=10240) : spi(spi), cs(cs), dc(dc), rst(rst), width(width), maxX(width), height(height), maxY(height), blitBufferSize(blit_buffer_size) {
+    ILI9225(SPIClass *spi, int cs, int dc, int rst, int sdi, int clk, int width=ILI9225_LCD_WIDTH, int height=ILI9225_LCD_HEIGHT, int blit_buffer_size=10240) : spi(spi), cs(cs), dc(dc), rst(rst), width(width), maxX(width), height(height), maxY(height) {
         pinMode(rst, OUTPUT);
         digitalWrite(rst, LOW);
 
